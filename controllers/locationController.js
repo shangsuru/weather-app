@@ -109,7 +109,7 @@ module.exports = {
           icon: data.weather[0].icon
         })
       }
-      res.send(`${city} inserted`)
+      res.json(location)
     } catch (error) {
       res.status(500).json({ error: error.toString() })
     }

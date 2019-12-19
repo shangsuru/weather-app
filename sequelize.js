@@ -3,7 +3,7 @@ const LocationModel = require('./models/Location')
 const ForecastModel = require('./models/Forecast')
 
 const sequelize = new Sequelize('postgres://localhost:5432/weather', {
-  //logging: false,
+  logging: false,
   dialect: 'postgres'
 })
 

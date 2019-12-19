@@ -38,7 +38,7 @@ const getDateString = () => {
   return `${dayName}, ${day}.${month}.${year}`
 }
 
-const Dashboard = ({ locations }) => {
+const Dashboard = ({ locations, addLocation }) => {
   const [visible, setVisible] = useState(false)
   const [searchText, setSearchText] = useState('')
 
@@ -51,6 +51,7 @@ const Dashboard = ({ locations }) => {
     axios.post('http://localhost:8000/location', {
       location: searchText
     })
+    window.location.reload()
   }
 
   const handleCancel = e => {
