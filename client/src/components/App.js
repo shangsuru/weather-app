@@ -17,8 +17,6 @@ const App = () => {
       .then(result => setLocations(result.data))
   }, [])
 
-  const addLocation = location => setLocations(location)
-
   return (
     <div style={{ backgroundColor: 'lightgrey', height: '100vh' }}>
       <div className='header'>
@@ -29,7 +27,7 @@ const App = () => {
         <Switch>
           <Route path='/details/:city' component={Details}></Route>
           <Route path='/'>
-            <Dashboard locations={locations} addLocation={addLocation} />
+            <Dashboard locations={locations} />
           </Route>
         </Switch>
       </Router>

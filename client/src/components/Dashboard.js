@@ -38,7 +38,7 @@ const getDateString = () => {
   return `${dayName}, ${day}.${month}.${year}`
 }
 
-const Dashboard = ({ locations, addLocation }) => {
+const Dashboard = ({ locations }) => {
   const [visible, setVisible] = useState(false)
   const [searchText, setSearchText] = useState('')
 
