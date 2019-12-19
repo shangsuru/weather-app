@@ -61,7 +61,7 @@ const Dashboard = ({ locations }) => {
 
   const renderCards = locations => {
     return locations.map(location => (
-      <Col span={8}>
+      <Col span={8} key={location.city}>
         <Link to={`/details/${location.city}`}>
           <Card hoverable bordered={false} style={{ width: 300 }}>
             <div className='title'>{location.city}</div>
