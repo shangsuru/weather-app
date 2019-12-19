@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import './App.css'
+import PageHeader from './PageHeader'
 import Dashboard from './Dashboard'
 import Details from './Details'
 import LoadingScreen from './LoadingScreen'
@@ -36,17 +37,7 @@ const App = () => {
         <LoadingScreen />
       ) : (
         <div>
-          <div className='header'>
-            <Icon
-              type='cloud'
-              style={{
-                marginRight: '5px',
-                display: 'inline-block',
-                verticalAlign: 'middle'
-              }}
-            />
-            Wetter Online
-          </div>
+          <PageHeader />
           <Router>
             <Switch>
               <Route path='/details/:city' component={Details}></Route>

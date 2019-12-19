@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import './Dashboard.css'
+import AddLocationCard from './AddLocationCard'
 import axios from 'axios'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import { Breadcrumb, Card, Col, Row, Typography, Modal, Input } from 'antd'
+
 const { Text } = Typography
 const { Search } = Input
 
@@ -39,29 +41,6 @@ const getDateString = () => {
 }
 
 const Dashboard = ({ locations }) => {
-  const [visible, setVisible] = useState(false)
-  const [searchText, setSearchText] = useState('')
-
-  const showModal = () => {
-    setVisible(true)
-  }
-
-  const handleOk = e => {
-    setVisible(false)
-    axios
-      .post('http://localhost:8000/location', {
-        location: searchText
-      })
-      .then(() => {
-        setSearchText('')
-        window.location.reload()
-      })
-  }
-
-  const handleCancel = e => {
-    setVisible(false)
-  }
-
   const renderCards = locations => {
     return locations.map(location => (
       <Col span={8} key={location.city}>
@@ -100,31 +79,7 @@ const Dashboard = ({ locations }) => {
         <Row gutter={[16, 16]}>
           {renderCards(locations)}
           <Col span={8}>
-            <Card
-              hoverable
-              onClick={showModal}
-              style={{
-                width: 300,
-                height: 187,
-                border: '1px dashed grey'
-              }}
-            >
-              + Ort hinzufügen
-            </Card>
-            <Modal
-              title='Stadt auswählen'
-              visible={visible}
-              onOk={handleOk}
-              onCancel={handleCancel}
-              cancelText='Abbruch'
-              okText='OK'
-            >
-              <Search
-                placeholder='Ort hinzufügen'
-                onChange={event => setSearchText(event.target.value)}
-                style={{ width: 200 }}
-              />
-            </Modal>
+            <AddLocationCard />
           </Col>
         </Row>
       </div>
