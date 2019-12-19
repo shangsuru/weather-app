@@ -48,11 +48,14 @@ const Dashboard = ({ locations }) => {
 
   const handleOk = e => {
     setVisible(false)
-    axios.post('http://localhost:8000/location', {
-      location: searchText
-    })
-    setSearchText('')
-    window.location.reload()
+    axios
+      .post('http://localhost:8000/location', {
+        location: searchText
+      })
+      .then(() => {
+        setSearchText('')
+        window.location.reload()
+      })
   }
 
   const handleCancel = e => {
