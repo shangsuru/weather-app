@@ -51,6 +51,7 @@ const Dashboard = ({ locations }) => {
     axios.post('http://localhost:8000/location', {
       location: searchText
     })
+    setSearchText('')
     window.location.reload()
   }
 
