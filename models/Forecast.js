@@ -2,10 +2,8 @@ module.exports = (sequelize, type) => {
   return sequelize.define(
     'forecast',
     {
-      time: {
-        type: type.STRING,
-        primaryKey: true
-      },
+      locationCity: type.STRING,
+      time: type.STRING,
       temp: type.FLOAT,
       humidity: type.INTEGER,
       icon: type.STRING

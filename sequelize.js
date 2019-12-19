@@ -10,11 +10,10 @@ const sequelize = new Sequelize('postgres://localhost:5432/weather', {
 const Location = LocationModel(sequelize, Sequelize)
 const Forecast = ForecastModel(sequelize, Sequelize)
 
-Location.hasMany(Forecast, { onDelete: 'cascade' })
-
 sequelize.sync({ force: true })
 
 module.exports = {
   Location,
+  Forecast,
   sequelize
 }

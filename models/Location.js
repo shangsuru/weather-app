@@ -1,8 +1,8 @@
 module.exports = (sequelize, type) => {
   return sequelize.define('location', {
     city: {
-      type: type.STRING,
-      primaryKey: true
+      primaryKey: true,
+      type: type.STRING
     },
     minTemp: type.FLOAT,
     maxTemp: type.FLOAT,
