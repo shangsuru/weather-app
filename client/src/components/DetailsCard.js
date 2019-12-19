@@ -1,20 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import {
-  Breadcrumb,
-  Card,
-  Col,
-  Row,
-  Typography,
-  Modal,
-  Input,
-  Button,
-  Icon
-} from 'antd'
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
+import { Breadcrumb, Card, Col, Row, Button, Icon } from 'antd'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
 import './Details.css'
 
-const Details = props => {
+const DetailsCard = props => {
   console.log(props.match.params.city)
   const [city, setCity] = useState('')
 
@@ -66,4 +56,4 @@ const Details = props => {
   )
 }
 
-export default Details
+export default DetailsCard

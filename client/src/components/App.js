@@ -3,12 +3,9 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import './App.css'
 import PageHeader from './PageHeader'
 import Dashboard from './Dashboard'
-import Details from './Details'
+import Details from './DetailsCard'
 import LoadingScreen from './LoadingScreen'
 import axios from 'axios'
-
-import 'antd/dist/antd.css'
-import { Icon, Row, Col } from 'antd'
 
 const App = () => {
   const [locations, setLocations] = useState([])
