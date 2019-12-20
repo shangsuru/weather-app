@@ -5,7 +5,6 @@ import axios from 'axios'
 import './Details.css'
 
 const DetailsCard = props => {
-  console.log(props.match.params.city)
   const [city, setCity] = useState('')
 
   useEffect(() => {

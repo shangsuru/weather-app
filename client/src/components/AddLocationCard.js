@@ -26,6 +26,13 @@ const AddLocationCard = () => {
   const handleCancel = e => {
     setVisible(false)
   }
+
+  const handleKeyPress = e => {
+    if (e.key === 'Enter') {
+      handleOk()
+    }
+  }
+
   return (
     <div>
       <Card
@@ -49,6 +56,7 @@ const AddLocationCard = () => {
       >
         <Search
           placeholder='Ort hinzufügen'
+          onKeyDown={event => handleKeyPress(event)}
           onChange={event => setSearchText(event.target.value)}
           style={{ width: 200 }}
         />

@@ -1,11 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './Dashboard.css'
 import AddLocationCard from './AddLocationCard'
 import WeatherCard from './WeatherCard'
-import { Breadcrumb, Col, Row, Typography, Input } from 'antd'
-
-const { Text } = Typography
-const { Search } = Input
+import { Breadcrumb, Col, Row } from 'antd'
 
 const Dashboard = ({ locations }) => {
   const renderCards = locations => {
