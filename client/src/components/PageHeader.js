@@ -3,6 +3,7 @@ import React from 'react'
 const PageHeader = () => (
   <div className='header'>
     <img
+      alt='Logo'
       style={{
         marginRight: '5px',
         display: 'inline-block',

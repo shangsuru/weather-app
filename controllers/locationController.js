@@ -71,7 +71,7 @@ module.exports = {
       let forecasts = await Forecast.findAll({ where: { locationCity: city } })
 
       if (location == null) {
-        res.status(404).send({ error: 'Resource not found.' })
+        res.status(404).json({ error: 'Resource not found' })
       }
 
       res.json({ weather: location, forecasts: forecasts })

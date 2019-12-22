@@ -3,9 +3,10 @@ import axios from 'axios'
 import { Card, Modal, Input } from 'antd'
 const { Search } = Input
 
+// card, when clicked opens up a modal, where one can enter a location name to be displayed in the dashboard
 const AddLocationCard = () => {
-  const [visible, setVisible] = useState(false)
-  const [searchText, setSearchText] = useState('')
+  const [visible, setVisible] = useState(false) // modal visible or not
+  const [searchText, setSearchText] = useState('') // content of searchbar in modal
 
   const showModal = () => {
     setVisible(true)
@@ -13,6 +14,7 @@ const AddLocationCard = () => {
 
   const handleOk = e => {
     setVisible(false)
+    // create location
     axios
       .post('http://localhost:8000/location', {
         location: searchText
@@ -46,6 +48,7 @@ const AddLocationCard = () => {
       >
         + Ort hinzufügen
       </Card>
+
       <Modal
         title='Stadt auswählen'
         visible={visible}
